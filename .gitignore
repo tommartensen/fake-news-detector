@@ -102,3 +102,6 @@ ENV/
 
 # Misc
 .idea/
+
+# raw data
+preprocessing/raw_data
