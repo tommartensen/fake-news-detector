@@ -103,5 +103,8 @@ ENV/
 # Misc
 .idea/
 
-# raw data
+# raw and preprocessed data
 preprocessing/raw_data
+fake_base_complete.json
+test_set.json
+training_set.json
