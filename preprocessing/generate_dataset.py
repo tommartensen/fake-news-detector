@@ -6,6 +6,7 @@ import os
 import re
 import random
 
+
 def increase_field_limit():
 	"""
 	Increases the field limit for csv files.
@@ -103,6 +104,9 @@ def save_data_set(data_set):
 
 
 if __name__ == "__main__":
+	if not (os.path.exists("raw_data/fake.csv") and os.path.exists("raw_data/sample-1M.jsonl")):
+		sys.exit("Critical Error!\nPlease place the raw data in the corresponding directory first.\nSee the readme "
+		         "for more information.")
 	increase_field_limit()
 	fake_news_articles = read_fake_news()
 	genuine_articles = generate_sample()
