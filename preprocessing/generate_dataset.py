@@ -1,6 +1,8 @@
 import csv
 import json
 import sys
+from time import time
+
 import json_lines
 import os
 import re
@@ -34,7 +36,7 @@ def read_fake_news():
 	data = []
 	with open("raw_data/fake.csv", mode="r", encoding="utf-8") as f:
 		for article in csv.DictReader(f):
-			data.append([article["text"], 1])
+			data.append([clean_text(article["text"]), 1])
 	return data
 
 
@@ -107,7 +109,9 @@ if __name__ == "__main__":
 	if not (os.path.exists("raw_data/fake.csv") and os.path.exists("raw_data/sample-1M.jsonl")):
 		sys.exit("Critical Error!\nPlease place the raw data in the corresponding directory first.\nSee the readme "
 		         "for more information.")
+	start = time()
 	increase_field_limit()
 	fake_news_articles = read_fake_news()
 	genuine_articles = generate_sample()
 	save_data_set(fake_news_articles + genuine_articles)
+	print("Operation successfully finished after %2.f seconds." % (time() - start))
