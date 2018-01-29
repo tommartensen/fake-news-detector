@@ -32,7 +32,7 @@ def read_fake_news():
 	Reads fake news articles from file.
 	:return: Array of fake news with label.
 	"""
-	print("Read fake news articles...")
+	print("Reading fake news articles...")
 	data = []
 	with open("raw_data/fake.csv", mode="r", encoding="utf-8") as f:
 		for article in csv.DictReader(f):
@@ -46,7 +46,7 @@ def generate_sample():
 	:return: Array of genuine articles with label.
 	"""
 	articles = read_articles()
-	print("Generate sample...")
+	print("Generating sample...")
 	sample = random.sample(articles, 52001)
 	data = []
 	for article in sample:
@@ -59,7 +59,7 @@ def read_articles():
 	Reads sample article file.
 	:return: Array of news articles.
 	"""
-	print("Read genuine articles...")
+	print("Reading genuine articles...")
 	articles = []
 	with open("raw_data/sample-1M.jsonl", mode="rb") as f:
 		for article in json_lines.reader(f):
@@ -70,12 +70,15 @@ def read_articles():
 
 def clean_text(text):
 	"""
-	Cleans a string from upper and special characters.
+	Cleans a string from upper, special and unicode characters (ignored by double ascii conversion).
 	:param text: string to clean
 	:return: cleaned string
 	"""
 	cleaned_text = text.lower()
-	return re.sub(r'[^\w\s]', '', cleaned_text)
+	for char in ["\n", "\t", "\r"]:
+		cleaned_text = cleaned_text.replace(char, " ")
+	cleaned_text = cleaned_text.encode("ascii", "ignore").decode("ascii")
+	return re.sub(r"[^\w\s]", "", cleaned_text)
 
 
 def split_fake_base(data_set):
@@ -94,7 +97,7 @@ def save_data_set(data_set):
 	:param data_set: array to save
 	:return:
 	"""
-	print("Save files...")
+	print("Saving files...")
 	if not os.path.exists("data"):
 		os.mkdir("data")
 	training_set, validation_set, test_set = split_fake_base(data_set)
