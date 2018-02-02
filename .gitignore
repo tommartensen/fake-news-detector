@@ -108,3 +108,4 @@ preprocessing/raw_data
 fake_base_complete.json
 test_set.json
 training_set.json
+feature_generation/data
