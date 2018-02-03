@@ -109,3 +109,8 @@ fake_base_complete.json
 test_set.json
 training_set.json
 feature_generation/data
+feature_generation/raw_data
+feature_generation/vectorizers
+feature_regeneration/raw_data
+feature_regeneration/data
+feature_regeneration/vectorizers
