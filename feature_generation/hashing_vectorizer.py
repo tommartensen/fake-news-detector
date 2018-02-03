@@ -11,7 +11,7 @@ def dump_vectorizer(vectorizer, filename):
 	print("Dumping vectorizer...")
 	if not os.path.exists("vectorizers"):
 		os.mkdir("vectorizers")
-	with open("vectorizers/" + filename + ".vec", "w") as f:
+	with open("vectorizers/" + filename + ".vec", "wb") as f:
 		pickle.dump(vectorizer, f)
 
 
@@ -42,7 +42,8 @@ def main(argv):
 	labels = []
 
 	print("Preparing data...")
-	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/validation_set.json"), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/training_set.json"), "r") as f:
+	#with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/validation_set.json"), "r") as f:
 		data = json.load(f)
 		for article in data:
 			articles.append(article[0])
