@@ -41,8 +41,8 @@ def get_random_layer_sizes():
 def run_search(clf, param_dist, X, y):
 	# run randomized search
 	print("Starting randomized search for", type(clf).__name__, "...")
-	n_iter_search = 1
-	random_search = RandomizedSearchCV(clf, param_distributions=param_dist, n_iter=n_iter_search, n_jobs=-1,
+	n_iter_search = 50
+	random_search = RandomizedSearchCV(clf, param_distributions=param_dist, n_iter=n_iter_search, n_jobs=1,
 	                                   cv=5, scoring=make_scorer(f1_score, labels=[0, 1]))
 
 	start = time()
@@ -81,17 +81,6 @@ def main(filename):
 				"class_weight": ["balanced", None]
 			}
 		],
-		[
-			MLPClassifier(),
-			{
-				"activation": ["identity", "logistic", "tanh", "relu"],
-				"solver": ["lbfgs", "sgd", "adam"],
-				"alpha": np.random.uniform(low=0.000001, high=0.01, size=(200,)),
-				"tol": np.random.uniform(low=0.000001, high=0.01, size=(200,)),
-				"hidden_layer_sizes": get_random_layer_sizes()
-			}
-		]
-
 	]
 
 	for clf, param_dist in configurations:
@@ -99,10 +88,10 @@ def main(filename):
 
 
 if __name__ == "__main__":
-	for i in range(1, 4):
-		print("ngram: " + str(i))
-		main("ngram_l%d_u%d.json" % (i, i))
-		print("ngram: " + str(i) + " tfidf")
-		main("ngram_l%d_u%d_t.json" % (i, i))
+	for i in range(2, 4):
+		#print("ngram: " + str(i))
+		#main("ngram_l%d_u%d.json" % (i, i))
+		#print("ngram: " + str(i) + " tfidf")
+		#main("ngram_l%d_u%d_t.json" % (i, i))
 		print("hashed: " + str(i))
 		main("hashed_10000_l" + str(i) + "_u" + str(i) + ".json")
