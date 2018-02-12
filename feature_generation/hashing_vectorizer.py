@@ -42,7 +42,6 @@ def main(argv):
 	labels = []
 
 	print("Preparing data...")
-
 	# Uncomment when vectorizing training_set
 	# with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/training_set.json"), "r") as f:
 	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/validation_set.json"), "r") as f:
