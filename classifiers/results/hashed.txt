@@ -1,0 +1,283 @@
+"C:\Users\Tom Martensen\AppData\Local\Programs\Python\Python36\python.exe" D:/fake-news-detector/hyperparameter_optimization/randomized_search.py
+ngram: 1
+ngram: 1 tfidf
+hashed: 1
+Loading data...
+Starting randomized search for RandomForestClassifier ...
+Random search took 2722.55 seconds, 50 parameter settings tested.
+Model with rank: 1
+Mean validation score: 0.616 (std: 0.010)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 5312, 'max_features': 6142, 'min_samples_leaf': 249, 'min_samples_split': 5151}
+
+Model with rank: 2
+Mean validation score: 0.587 (std: 0.036)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 9464, 'max_features': 5108, 'min_samples_leaf': 230, 'min_samples_split': 7294}
+
+Model with rank: 3
+Mean validation score: 0.555 (std: 0.033)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 8730, 'max_features': 8524, 'min_samples_leaf': 405, 'min_samples_split': 786}
+
+Starting randomized search for LogisticRegression ...
+Random search took 15444.59 seconds, 50 parameter settings tested.
+Model with rank: 1
+Mean validation score: 0.808 (std: 0.012)
+Parameters: {'solver': 'liblinear', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 3.1868737299195731}
+
+Model with rank: 1
+Mean validation score: 0.808 (std: 0.012)
+Parameters: {'solver': 'saga', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 3.1617197940772321}
+
+Model with rank: 3
+Mean validation score: 0.808 (std: 0.012)
+Parameters: {'solver': 'newton-cg', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 3.8739318607587503}
+
+hashed: 2
+Loading data...
+Starting randomized search for RandomForestClassifier ...
+Random search took 3882.64 seconds, 50 parameter settings tested.
+Model with rank: 1
+Mean validation score: 0.440 (std: 0.021)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 3279, 'max_features': 7683, 'min_samples_leaf': 263, 'min_samples_split': 4406}
+
+Model with rank: 2
+Mean validation score: 0.414 (std: 0.024)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 817, 'max_features': 3271, 'min_samples_leaf': 285, 'min_samples_split': 623}
+
+Model with rank: 3
+Mean validation score: 0.344 (std: 0.016)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 2037, 'max_features': 7640, 'min_samples_leaf': 347, 'min_samples_split': 5677}
+
+Starting randomized search for LogisticRegression ...
+Random search took 14024.74 seconds, 50 parameter settings tested.
+Model with rank: 1
+Mean validation score: 0.647 (std: 0.016)
+Parameters: {'solver': 'lbfgs', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 0.51307969295165845}
+
+Model with rank: 2
+Mean validation score: 0.647 (std: 0.018)
+Parameters: {'solver': 'saga', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 0.73472385911424531}
+
+Model with rank: 3
+Mean validation score: 0.646 (std: 0.018)
+Parameters: {'solver': 'lbfgs', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 0.74562464693881347}
+
+hashed: 3
+Loading data...
+Starting randomized search for RandomForestClassifier ...
+Random search took 2313.77 seconds, 50 parameter settings tested.
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 8754, 'max_features': 6386, 'min_samples_leaf': 8356, 'min_samples_split': 8313}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 8826, 'max_features': 9865, 'min_samples_leaf': 2258, 'min_samples_split': 6338}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 831, 'max_features': 554, 'min_samples_leaf': 7930, 'min_samples_split': 6729}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 5368, 'max_features': 8221, 'min_samples_leaf': 9253, 'min_samples_split': 2145}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 7564, 'max_features': 1685, 'min_samples_leaf': 2214, 'min_samples_split': 7742}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 8187, 'max_features': 5969, 'min_samples_leaf': 4168, 'min_samples_split': 8691}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 861, 'max_features': 2029, 'min_samples_leaf': 6361, 'min_samples_split': 986}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 6990, 'max_features': 9285, 'min_samples_leaf': 9849, 'min_samples_split': 9921}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 7315, 'max_features': 6018, 'min_samples_leaf': 1537, 'min_samples_split': 1394}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 4345, 'max_features': 927, 'min_samples_leaf': 4216, 'min_samples_split': 3455}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 1528, 'max_features': 2717, 'min_samples_leaf': 7164, 'min_samples_split': 5386}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 4814, 'max_features': 6344, 'min_samples_leaf': 8332, 'min_samples_split': 9319}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 1770, 'max_features': 3524, 'min_samples_leaf': 5880, 'min_samples_split': 5129}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 6494, 'max_features': 195, 'min_samples_leaf': 1365, 'min_samples_split': 2597}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 5000, 'max_features': 8148, 'min_samples_leaf': 5767, 'min_samples_split': 1891}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 1880, 'max_features': 2577, 'min_samples_leaf': 8407, 'min_samples_split': 8727}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 4726, 'max_features': 7032, 'min_samples_leaf': 633, 'min_samples_split': 7216}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 6395, 'max_features': 5145, 'min_samples_leaf': 7019, 'min_samples_split': 9768}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 4577, 'max_features': 3062, 'min_samples_leaf': 739, 'min_samples_split': 2133}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 735, 'max_features': 3212, 'min_samples_leaf': 3367, 'min_samples_split': 6119}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 2955, 'max_features': 3628, 'min_samples_leaf': 4494, 'min_samples_split': 1689}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 3417, 'max_features': 6858, 'min_samples_leaf': 8616, 'min_samples_split': 1983}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 7378, 'max_features': 9162, 'min_samples_leaf': 3291, 'min_samples_split': 6443}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 8750, 'max_features': 1182, 'min_samples_leaf': 2592, 'min_samples_split': 4656}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 7489, 'max_features': 1537, 'min_samples_leaf': 3207, 'min_samples_split': 9588}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 4610, 'max_features': 3838, 'min_samples_leaf': 5425, 'min_samples_split': 8472}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 9234, 'max_features': 2475, 'min_samples_leaf': 8552, 'min_samples_split': 1553}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 7595, 'max_features': 774, 'min_samples_leaf': 5758, 'min_samples_split': 5082}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 3739, 'max_features': 8218, 'min_samples_leaf': 855, 'min_samples_split': 9375}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 6962, 'max_features': 6146, 'min_samples_leaf': 9592, 'min_samples_split': 9802}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 1456, 'max_features': 6020, 'min_samples_leaf': 9069, 'min_samples_split': 2801}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 7512, 'max_features': 8075, 'min_samples_leaf': 9802, 'min_samples_split': 6173}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 6555, 'max_features': 4547, 'min_samples_leaf': 4672, 'min_samples_split': 1069}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 2486, 'max_features': 4015, 'min_samples_leaf': 2514, 'min_samples_split': 9711}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 2665, 'max_features': 6539, 'min_samples_leaf': 4212, 'min_samples_split': 588}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 8736, 'max_features': 4229, 'min_samples_leaf': 2112, 'min_samples_split': 1034}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 9456, 'max_features': 1974, 'min_samples_leaf': 8665, 'min_samples_split': 9928}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 8999, 'max_features': 9212, 'min_samples_leaf': 9151, 'min_samples_split': 7751}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 7518, 'max_features': 9122, 'min_samples_leaf': 8441, 'min_samples_split': 4477}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 6614, 'max_features': 3286, 'min_samples_leaf': 664, 'min_samples_split': 6982}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 7785, 'max_features': 7316, 'min_samples_leaf': 7750, 'min_samples_split': 3563}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 6777, 'max_features': 3893, 'min_samples_leaf': 1029, 'min_samples_split': 8523}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 5071, 'max_features': 8732, 'min_samples_leaf': 5317, 'min_samples_split': 9373}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 4090, 'max_features': 387, 'min_samples_leaf': 5921, 'min_samples_split': 2001}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'entropy', 'max_depth': 5375, 'max_features': 5929, 'min_samples_leaf': 2397, 'min_samples_split': 3586}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'gini', 'max_depth': 9974, 'max_features': 8375, 'min_samples_leaf': 6553, 'min_samples_split': 8201}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': False, 'criterion': 'entropy', 'max_depth': 2341, 'max_features': 5551, 'min_samples_leaf': 3470, 'min_samples_split': 9858}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 6082, 'max_features': 4724, 'min_samples_leaf': 5062, 'min_samples_split': 4575}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 6121, 'max_features': 7313, 'min_samples_leaf': 7208, 'min_samples_split': 3122}
+
+Model with rank: 1
+Mean validation score: 0.000 (std: 0.000)
+Parameters: {'bootstrap': True, 'criterion': 'gini', 'max_depth': 471, 'max_features': 9148, 'min_samples_leaf': 895, 'min_samples_split': 2318}
+
+Starting randomized search for LogisticRegression ...
+Random search took 14059.73 seconds, 50 parameter settings tested.
+Model with rank: 1
+Mean validation score: 0.398 (std: 0.011)
+Parameters: {'solver': 'newton-cg', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 0.018505334239189521}
+
+Model with rank: 2
+Mean validation score: 0.394 (std: 0.010)
+Parameters: {'solver': 'liblinear', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 0.68575121636106318}
+
+Model with rank: 3
+Mean validation score: 0.393 (std: 0.010)
+Parameters: {'solver': 'liblinear', 'penalty': 'l2', 'dual': 0, 'class_weight': 'balanced', 'C': 0.70154899135328408}
+
+
+Process finished with exit code 0
