@@ -10,6 +10,12 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
 
 def calc_df(upper_bound, size):
+	"""
+	Helper function to constrain the length of the vector.
+	:param upper_bound: ngram upper bound
+	:param size: size of the data set
+	:return:
+	"""
 	return math.floor((size / upper_bound) * (30 / 13000))
 
 
@@ -23,7 +29,7 @@ def dump_vectorizer(vectorizer, filename):
 
 def main(argv):
 	if len(argv) < 2:
-		print('ngram_generation.py -l <lower bound> -u <upper bound> [-t]')
+		print('ngram_vectorizer.py -l <lower bound> -u <upper bound> [-t]')
 		sys.exit(2)
 	lower_bound = 1
 	upper_bound = 1
@@ -31,12 +37,12 @@ def main(argv):
 	try:
 		opts, args = getopt.getopt(argv, "htl:u:", ["lower_bound=", "upper_bound="])
 	except getopt.GetoptError:
-		print('ngram_generation.py -l <lower bound> -u <upper bound> [-t]')
+		print('ngram_vectorizer.py -l <lower bound> -u <upper bound> [-t]')
 		sys.exit(2)
 	filename = "ngram"
 	for opt, arg in opts:
 		if opt == '-h':
-			print('ngram_generation.py -l <lower bound> -u <upper bound> [-t]')
+			print('ngram_vectorizer.py -l <lower bound> -u <upper bound> [-t]')
 			sys.exit()
 		elif opt in ("-l", "--lower_bound"):
 			filename += "_l" + arg
@@ -52,6 +58,7 @@ def main(argv):
 	labels = []
 
 	print("Preparing data...")
+	# Uncomment when vectorizing training_set
 	# with open("raw_data/training_set.json", "r") as f:
 	with open("raw_data/validation_set.json", "r") as f:
 		data = json.load(f)
@@ -77,7 +84,7 @@ def main(argv):
 	with open("data/labels.json", "w") as f:
 		json.dump(labels, f)
 
-	# Use when vectorizing training set to reuse for test set!
+	# Uncomment when vectorizing training set to reuse for test set!
 	dump_vectorizer(vectorizer, filename)
 
 if __name__ == "__main__":

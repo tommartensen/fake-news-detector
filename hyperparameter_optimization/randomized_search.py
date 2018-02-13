@@ -17,17 +17,16 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-# Utility function to report best scores
 def report(results, n_top=3):
+	# Utility function to report best scores
 	for i in range(1, n_top + 1):
 		candidates = np.flatnonzero(results['rank_test_score'] == i)
 		for candidate in candidates:
-			print("Model with rank: {0}".format(i))
+			print("Model with rank:" + str(i))
 			print("Mean validation score: {0:.3f} (std: {1:.3f})".format(
 				  results['mean_test_score'][candidate],
 				  results['std_test_score'][candidate]))
-			print("Parameters: {0}".format(results['params'][candidate]))
-			print("")
+			print("Parameters: {0}\n".format(results['params'][candidate]))
 
 
 def get_random_layer_sizes():
@@ -39,10 +38,10 @@ def get_random_layer_sizes():
 
 
 def run_search(clf, param_dist, X, y):
-	# run randomized search
+	# run randomized search, due to memory limits on developer machine, RandomizedSearchCV must run single-threaded.
 	print("Starting randomized search for", type(clf).__name__, "...")
-	n_iter_search = 1
-	random_search = RandomizedSearchCV(clf, param_distributions=param_dist, n_iter=n_iter_search, n_jobs=-1,
+	n_iter_search = 50
+	random_search = RandomizedSearchCV(clf, param_distributions=param_dist, n_iter=n_iter_search, n_jobs=1,
 	                                   cv=5, scoring=make_scorer(f1_score, labels=[0, 1]))
 
 	start = time()
@@ -91,7 +90,6 @@ def main(filename):
 				"hidden_layer_sizes": get_random_layer_sizes()
 			}
 		]
-
 	]
 
 	for clf, param_dist in configurations:

@@ -42,8 +42,9 @@ def main(argv):
 	labels = []
 
 	print("Preparing data...")
-	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/training_set.json"), "r") as f:
-	#with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/validation_set.json"), "r") as f:
+	# Uncomment when vectorizing training_set
+	# with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/training_set.json"), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/validation_set.json"), "r") as f:
 		data = json.load(f)
 		for article in data:
 			articles.append(article[0])
@@ -61,7 +62,7 @@ def main(argv):
 	with open("data/labels.json", "w") as f:
 		json.dump(labels, f)
 
-	# Use when vectorizing training set to reuse for test set!
+	# Uncomment when vectorizing training set to reuse for test set!
 	# dump_vectorizer(hv, filename)
 
 

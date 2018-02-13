@@ -41,7 +41,7 @@ def dump_features(features, lower_bound, upper_bound, include_tfidf):
 
 def process_args(argv):
 	if len(argv) < 2:
-		print('ngram_regeneration.py -l <lower bound> -u <upper bound> [-t]')
+		print('ngram_revectorizer.py -l <lower bound> -u <upper bound> [-t]')
 		sys.exit(2)
 	lower_bound = 1
 	upper_bound = 1
@@ -49,11 +49,11 @@ def process_args(argv):
 	try:
 		opts, args = getopt.getopt(argv, "htl:u:", ["lower_bound=", "upper_bound="])
 	except getopt.GetoptError:
-		print('ngram_regeneration.py -l <lower bound> -u <upper bound> [-t]')
+		print('ngram_revectorizer.py -l <lower bound> -u <upper bound> [-t]')
 		sys.exit(2)
 	for opt, arg in opts:
 		if opt == '-h':
-			print('ngram_regeneration.py -l <lower bound> -u <upper bound> [-t]')
+			print('ngram_revectorizer.py -l <lower bound> -u <upper bound> [-t]')
 			sys.exit()
 		elif opt in ("-l", "--lower_bound"):
 			lower_bound = str(int(arg))
