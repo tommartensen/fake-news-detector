@@ -521,6 +521,38 @@ if __name__ == "__main__":
 			}
 		]
 	]
+	configurations = [
+		[
+			MLPClassifier(),
+			{
+			},
+			{
+				"number": 1,
+				"tfidf": 0,
+				"hashed": 1,
+			}
+		],
+		[
+			MLPClassifier(),
+			{
+			},
+			{
+				"number": 2,
+				"tfidf": 0,
+				"hashed": 1,
+			}
+		],
+		[
+			MLPClassifier(),
+			{
+			},
+			{
+				"number": 3,
+				"tfidf": 0,
+				"hashed": 1,
+			}
+		]
+	]
 	for clf, params, vectorizer_info in configurations:
 		print("Evaluating performance for " + type(clf).__name__ + "...")
 		training_data, training_labels = load_training_data(vectorizer_info)
