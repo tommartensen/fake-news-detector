@@ -393,8 +393,6 @@ if __name__ == "__main__":
 				"hashed": 0,
 			}
 		],
-	]
-	configurations = [
 		[
 			RandomForestClassifier(n_estimators=20, n_jobs=-1),
 			{
@@ -488,8 +486,6 @@ if __name__ == "__main__":
 				"hashed": 1,
 			}
 		],
-	]
-	configurations=[
 		[
 			GaussianNB(),
 			{
@@ -519,9 +515,7 @@ if __name__ == "__main__":
 				"tfidf": 0,
 				"hashed": 1,
 			}
-		]
-	]
-	configurations = [
+		],
 		[
 			MLPClassifier(),
 			{
