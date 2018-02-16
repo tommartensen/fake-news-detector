@@ -32,6 +32,7 @@ python3 feature_generation/ngram_vectorizer_training.py -u 3 -l 3 -t
 
 echo "Done. Copying vectorizers into right directory".
 echo "Starting regeneration now."
+mkdir feature_regeneration/data
 python3 feature_generation/hashing_revectorizer.py -u 1 -l 1
 python3 feature_generation/hashing_revectorizer.py -u 2 -l 2
 python3 feature_generation/hashing_revectorizer.py -u 3 -l 3
