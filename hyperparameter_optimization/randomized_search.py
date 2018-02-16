@@ -55,7 +55,7 @@ def main(filename):
 	print("Loading data...")
 	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename), "r") as f:
 		X = json.load(f)
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json" + filename), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json"), "r") as f:
 		y = json.load(f)
 
 	n_features = len(X[0])

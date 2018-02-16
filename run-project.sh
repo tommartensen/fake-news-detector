@@ -20,6 +20,8 @@ python3 hyperparameter_optimization/randomized_search.py
 
 echo "Done with hyperparameter optimization and edit them in 'classifier/experiment.py'."
 echo "Will generate features for training and test set now."
+mkdir -p feature_generation/data/trained
+mkdir -p feature_generation/vectorizers
 python3 feature_generation/hashing_vectorizer_training.py -l 1 -u 1
 python3 feature_generation/hashing_vectorizer_training.py -l 2 -u 2
 python3 feature_generation/hashing_vectorizer_training.py -l 3 -u 3
@@ -30,7 +32,6 @@ python3 feature_generation/ngram_vectorizer_training.py -l 1 -u 1 -t
 python3 feature_generation/ngram_vectorizer_training.py -l 2 -u 2 -t
 python3 feature_generation/ngram_vectorizer_training.py -l 3 -u 3 -t
 
-echo "Done. Copying vectorizers into right directory".
 echo "Starting regeneration now."
 mkdir -p feature_regeneration/data
 python3 feature_regeneration/hashing_revectorizer.py -l 1 -u 1

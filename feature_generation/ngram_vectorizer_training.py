@@ -21,9 +21,7 @@ def calc_df(upper_bound, size):
 
 def dump_vectorizer(vectorizer, filename):
 	print("Dumping vectorizer...")
-	if not os.path.exists("vectorizers"):
-		os.mkdir("vectorizers")
-	with open("vectorizers/" + filename + ".vec", "wb") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/vectorizers/" + filename + ".vec"), "wb") as f:
 		pickle.dump(vectorizer, f)
 
 
@@ -75,9 +73,9 @@ def main(argv):
 		features = transformer.fit_transform(features).toarray()
 
 	print("Dumping tokenized features...")
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename + ".json"), "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/" + filename + ".json"), "w") as f:
 		json.dump(features.tolist(), f)
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json"),"w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/labels_training.json"), "w") as f:
 		json.dump(labels, f)
 
 	dump_vectorizer(vectorizer, filename)

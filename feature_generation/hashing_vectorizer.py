@@ -44,10 +44,9 @@ def main(argv):
 	features = hv.transform(articles).toarray()
 
 	print("Dumping tokenized features...")
-	print("Dumping tokenized features...")
 	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename + ".json"), "w") as f:
 		json.dump(features.tolist(), f)
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json"),"w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json"), "w") as f:
 		json.dump(labels, f)
 
 

@@ -20,9 +20,9 @@ def load_training_data(vectorizer_info):
 			filename += "_t"
 	print("The current vectorizer configuration is: " + filename)
 
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename + ".json"), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/" + filename + ".json"), "r") as f:
 		training_data = json.load(f)
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels_train.json"), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/labels_training.json"), "r") as f:
 		training_labels = json.load(f)
 	print("Training data loading completed...")
 	return training_data, training_labels

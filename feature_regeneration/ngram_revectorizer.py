@@ -7,7 +7,7 @@ import sys
 
 
 def load_vectorizer(lower_bound, upper_bound, include_tfidf):
-	filename = "ngram_train_l" + lower_bound + "_u" + upper_bound
+	filename = "ngram_l" + lower_bound + "_u" + upper_bound
 	if include_tfidf:
 		filename += "_t"
 	filename += ".vec"

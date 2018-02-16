@@ -7,7 +7,7 @@ import sys
 
 
 def load_vectorizer(lower_bound, upper_bound):
-	filename = "hashed_10000_train_l" + lower_bound + "_u" + upper_bound + ".vec"
+	filename = "hashed_10000_l" + lower_bound + "_u" + upper_bound + ".vec"
 	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/vectorizers/" + filename), "rb") as f:
 		return pickle.load(f)
 
