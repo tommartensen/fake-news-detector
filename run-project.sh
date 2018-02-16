@@ -14,9 +14,6 @@ python3 feature_generation/ngram_vectorizer.py -u 2 -l 2 -t
 python3 feature_generation/ngram_vectorizer.py -u 3 -l 3 -t
 
 echo "Done feature generation for the validation set."
-echo "Copying files into the right place."
-mkdir hyperparameter_optimization/raw_data
-cp -r feature_generation/data hyperparameter_optimization/raw_data
 echo "Starting hyperparameter optimization."
 python3 hyperparameter_optimization/randomized_search.py
 
@@ -33,8 +30,6 @@ python3 feature_generation/ngram_vectorizer_training.py -u 2 -l 2 -t
 python3 feature_generation/ngram_vectorizer_training.py -u 3 -l 3 -t
 
 echo "Done. Copying vectorizers into right directory".
-mkdir feature_regeneration/vectorizers
-cp -r feature_generation/vectorizers feature_regeneration/vectorizers
 echo "Starting regeneration now."
 python3 feature_generation/hashing_revectorizer.py -u 1 -l 1
 python3 feature_generation/hashing_revectorizer.py -u 2 -l 2
