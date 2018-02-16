@@ -58,8 +58,6 @@ def main(argv):
 	labels = []
 
 	print("Preparing data...")
-	# Uncomment when vectorizing training_set
-	# with open("raw_data/training_set.json", "r") as f:
 	with open("raw_data/validation_set.json", "r") as f:
 		data = json.load(f)
 		for article in data:
@@ -83,9 +81,6 @@ def main(argv):
 		json.dump(features.tolist(), f)
 	with open("data/labels.json", "w") as f:
 		json.dump(labels, f)
-
-	# Uncomment when vectorizing training set to reuse for test set!
-	dump_vectorizer(vectorizer, filename)
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
