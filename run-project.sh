@@ -51,5 +51,5 @@ python3 feature_generation/ngram_revectorizer.py -u 3 -l 3 -t
 
 echo "Done. Will start experiment now with values that were calculated in the project. If you want to use the
 parameters that you have optimized, stop the script, edit 'classification/experiment.py' and run 'python3
-classification/experiment.py'."
+classification/experiment.py'. The results won't be the same as in my setup anyway!"
 python3 classification/experiment.py
