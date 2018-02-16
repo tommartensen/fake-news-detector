@@ -75,11 +75,9 @@ def main(argv):
 		features = transformer.fit_transform(features).toarray()
 
 	print("Dumping tokenized features...")
-	if not os.path.exists("data"):
-		os.mkdir("data")
-	with open("data/" + filename + ".json", "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename + ".json"), "w") as f:
 		json.dump(features.tolist(), f)
-	with open("data/labels.json", "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json"),"w") as f:
 		json.dump(labels, f)
 
 	dump_vectorizer(vectorizer, filename)

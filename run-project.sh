@@ -3,6 +3,7 @@ pip3 install -r setup/requirements.txt
 echo "1. Skipping the generation of the dataset, as it is already given, will place it in the right folders."
 echo "Prepared step 2."
 echo "Starting feature generation for the validation set."
+mkdir feature_generation/data
 python3 feature_generation/hashing_vectorizer.py -u 1 -l 1
 python3 feature_generation/hashing_vectorizer.py -u 2 -l 2
 python3 feature_generation/hashing_vectorizer.py -u 3 -l 3

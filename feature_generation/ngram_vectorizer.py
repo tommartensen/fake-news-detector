@@ -1,7 +1,6 @@
 import getopt
 import json
 import os
-import pickle
 
 import sys
 
@@ -17,14 +16,6 @@ def calc_df(upper_bound, size):
 	:return:
 	"""
 	return math.floor((size / upper_bound) * (30 / 13000))
-
-
-def dump_vectorizer(vectorizer, filename):
-	print("Dumping vectorizer...")
-	if not os.path.exists("vectorizers"):
-		os.mkdir("vectorizers")
-	with open("vectorizers/" + filename + ".vec", "wb") as f:
-		pickle.dump(vectorizer, f)
 
 
 def main(argv):
@@ -75,11 +66,9 @@ def main(argv):
 		features = transformer.fit_transform(features).toarray()
 
 	print("Dumping tokenized features...")
-	if not os.path.exists("data"):
-		os.mkdir("data")
-	with open("data/" + filename + ".json", "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename + ".json"), "w") as f:
 		json.dump(features.tolist(), f)
-	with open("data/labels.json", "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json"),"w") as f:
 		json.dump(labels, f)
 
 if __name__ == "__main__":
