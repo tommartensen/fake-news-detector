@@ -53,7 +53,7 @@ def run_search(clf, param_dist, X, y):
 
 def main(filename):
 	print("Loading data...")
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename), "rb") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename), "r") as f:
 		X = json.load(f)
 	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json" + filename), "r") as f:
 		y = json.load(f)
