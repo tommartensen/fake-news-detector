@@ -36,7 +36,7 @@ def dump_features(features, lower_bound, upper_bound, include_tfidf):
 	if include_tfidf:
 		filename += "_t"
 	filename += ".json"
-	with open(os.path.join(os.path.dirname(__file__), "../feature_regeneration/data/" + filename + ".json"), "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_regeneration/data/" + filename), "w") as f:
 		json.dump(features.tolist(), f)
 
 

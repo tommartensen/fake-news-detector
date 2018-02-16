@@ -13,9 +13,9 @@ def load_training_data(vectorizer_info):
 	hashed = vectorizer_info["hashed"]
 	tfidf = vectorizer_info["tfidf"]
 	if hashed:
-		filename = "hashed_10000_train_l" + str(number) + "_u" + str(number)
+		filename = "hashed_10000_l" + str(number) + "_u" + str(number)
 	else:
-		filename = "ngram_train_l" + str(number) + "_u" + str(number)
+		filename = "ngram_l" + str(number) + "_u" + str(number)
 		if tfidf:
 			filename += "_t"
 	print("The current vectorizer configuration is: " + filename)
