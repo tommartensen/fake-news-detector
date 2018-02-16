@@ -519,6 +519,11 @@ if __name__ == "__main__":
 		[
 			MLPClassifier(),
 			{
+				"activation": "relu",
+				"solver": "adam",
+				"alpha": 0.0065998,
+				"tol": 0.000156,
+				"hidden_layer_sizes": 167
 			},
 			{
 				"number": 1,
@@ -529,6 +534,11 @@ if __name__ == "__main__":
 		[
 			MLPClassifier(),
 			{
+				"activation": "identity",
+				"solver": "adam",
+				"alpha": 0.0074729,
+				"tol": 0.006715,
+				"hidden_layer_sizes": 110
 			},
 			{
 				"number": 2,
@@ -539,6 +549,11 @@ if __name__ == "__main__":
 		[
 			MLPClassifier(),
 			{
+				"activation": "relu",
+				"solver": "lbfgs",
+				"alpha": 0.005586,
+				"tol": 0.001587,
+				"hidden_layer_sizes": 173
 			},
 			{
 				"number": 3,
@@ -562,3 +577,4 @@ if __name__ == "__main__":
 		print_score(actual_labels=test_labels, predicted_labels=predictions)
 		print("-----------------------------------------------------------")
 		training_data, training_labels, test_labels, test_data = None, None, None, None
+	
