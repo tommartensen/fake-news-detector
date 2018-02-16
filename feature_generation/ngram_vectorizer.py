@@ -58,7 +58,7 @@ def main(argv):
 	labels = []
 
 	print("Preparing data...")
-	with open("raw_data/validation_set.json", "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/validation_set.json"), "r") as f:
 		data = json.load(f)
 		for article in data:
 			articles.append(article[0])

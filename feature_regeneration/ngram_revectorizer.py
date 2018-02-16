@@ -1,5 +1,6 @@
 import getopt
 import json
+import os
 import pickle
 
 import sys
@@ -10,12 +11,12 @@ def load_vectorizer(lower_bound, upper_bound, include_tfidf):
 	if include_tfidf:
 		filename += "_t"
 	filename += ".vec"
-	with open("vectorizers/" + filename, "rb") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/vectorizers/" + filename), "rb") as f:
 		return pickle.load(f)
 
 
 def load_test_dataset():
-	with open("raw_data/test_set.json", "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/test_set.json"), "r") as f:
 		data = json.load(f)
 	articles = []
 	labels = []

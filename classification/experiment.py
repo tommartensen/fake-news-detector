@@ -577,4 +577,3 @@ if __name__ == "__main__":
 		print_score(actual_labels=test_labels, predicted_labels=predictions)
 		print("-----------------------------------------------------------")
 		training_data, training_labels, test_labels, test_data = None, None, None, None
-	
