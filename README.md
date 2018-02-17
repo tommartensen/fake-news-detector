@@ -1,8 +1,17 @@
 # Fake News Detection
 Implementing a fake news detector. Comparing different ML algorithms and NLP strategies.
 
+# Requirements
+* Python 3, at least **Python 3.5.2**
+* Python 3 package manager **pip3**
 
-# Steps to recreate experiment
+# Running experiment with submission data set
+In `hyperparameter_optimization/randomized_search.py`, line 44 change the value of the variable `n_iter_search` which 
+determines the number of combinations that are tested in the parameter search to a value of your choice. The lower 
+this value, the faster the script, but the less values are tested.
+Then, execute the script `./run-project.sh`.
+
+# Running experiment step by step
 ## Setup Environment
 * Python 3 is required for this project. Version used in development is **Python 3.6.4.**
 * Run `pip3 install -r requirements.txt` in the `setup` folder. This installs the required Python libraries.
@@ -21,8 +30,8 @@ characteristics.
 above mentioned characteristics and 1,500 lines.
 ## Feature Generation
 We distinguish two vectorizers: 
-* hash vectorizer: `python3 (hashing_vectorizer.py -l <lower bound> -u <upper bound>` 
-* ngram vectorizer: `python3 (ngram_vectorizer.py -l <lower bound> -u <upper bound> [-t]`
+* hash vectorizer: `python3 hashing_vectorizer.py -l <lower bound> -u <upper bound>` 
+* ngram vectorizer: `python3 ngram_vectorizer.py -l <lower bound> -u <upper bound> [-t]`
 
 | Parameter|Values|
 | :------------- |:-------------|
@@ -31,24 +40,26 @@ We distinguish two vectorizers:
 | `-t` | use term frequency–inverse document frequency (only for ngrams)|
 
 In the experiment, `lower_bound` and `upper_bound` were set equal. The implementations are based on sklearn's 
-implementation of the `HashingVectorizer` and `CountVectorizer`. 
-As is these programs generate the features based on the `validation_set.json`, which must be supplied in the 
-`raw_data` directory. If the training set should be vectorized and the vectorizers stowed away for the regeneration 
-of the feature vectors with the test set, uncomment the lines marked in the files.
+implementation of the `HashingVectorizer` and `CountVectorizer`.
+
+If the training set should be vectorized and the vectorizers stowed away for the regeneration 
+of the feature vectors with the test set, use `hashing_vectorizer_training.py` and `ngram_vectorizer_training.py` 
+instead, with the same parameters.
+
 ## Hyperparameter Optimization
 To optimize the parameters for the machine learning algorithms in the experiment, run the hyperparameter optimization
- script. This requires the output of [this step](#feature-generation) placed in the `raw_data` directory relative to 
- `randomized_search.py`.
-  
+ script. Therefore, all features for the validation set must be generated!   
 Then, run `python3 randomized_search.py`. 
-## Feature Regeneration
-This step is to create the vectors for the test set that is used in the final assessment of the algorithms. 
-Therefore, place the `test_set.json` file in the `raw_data` directory and the vectorizers that were produced in 
-[this-step](#feature-generation) in `vectorizers`.
 
-Then, run both `python3 hashing_revectorizer.py` and `python3 ngram_revectorizer.py`.
+## Feature Regeneration
+This step is to create the vectors for the test set that is used in the final assessment of the algorithms. This can 
+only work, when the training set was already vectorized.
+
+Then, run both `python3 hashing_revectorizer.py` and `python3 ngram_revectorizer.py` with the same parameter settings
+ that are mentioned in [this step](#feature-generation).
+ 
 ## Classifier Performance
 The classifier performance is evaluated with the f1-score. The optimized parameters that were obtained in [this step](#hyperparameter-optimization) 
- are configured in code. The output is printed directly on the console.
+ must be configured in code. The output is printed directly on the console.
  Run `experiment.py` and have the vectorized training and test set ready in the `data` folders in 
- `feature_generation` and `feature_regeneration` respectively. 
+ `feature_generation` and `feature_regeneration` respectively, this should have happened automatically.
