@@ -4,6 +4,7 @@ Implementing a fake news detector. Comparing different ML algorithms and NLP str
 # Requirements
 * Python 3, at least **Python 3.5.2**
 * Python 3 package manager **pip3**
+* Tested on Ubuntu 16.04
 
 # Running experiment with submission data set
 In `hyperparameter_optimization/randomized_search.py`, line 44 change the value of the variable `n_iter_search` which 
@@ -48,7 +49,9 @@ instead, with the same parameters.
 
 ## Hyperparameter Optimization
 To optimize the parameters for the machine learning algorithms in the experiment, run the hyperparameter optimization
- script. Therefore, all features for the validation set must be generated!   
+ script. Therefore, all features for the validation set must already be generated as explained above! In line 44 of 
+ the script, you can set the number of configurations that should be tested. A higher number may give better results,
+  but also take longer.   
 Then, run `python3 randomized_search.py`. 
 
 ## Feature Regeneration

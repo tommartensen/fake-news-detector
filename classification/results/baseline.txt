@@ -1,2 +1,0 @@
-fake news: 2555
-not fake news: 10445
