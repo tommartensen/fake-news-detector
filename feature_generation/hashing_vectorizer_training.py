@@ -1,13 +1,20 @@
 import getopt
 import json
 import os
+import pickle
 
 import sys
 from sklearn.feature_extraction.text import HashingVectorizer
 
 
+def dump_vectorizer(vectorizer, filename):
+	print("Dumping vectorizer...")
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/vectorizers/" + filename + ".vec"), "wb") as f:
+		pickle.dump(vectorizer, f)
+
+
 def main(argv):
-	if len(argv) < 2:
+	if len(argv) < 3:
 		print('hashing_vectorizer.py -l <lower bound> -u <upper bound>')
 		sys.exit(2)
 	lower_bound = 1
@@ -33,7 +40,7 @@ def main(argv):
 	labels = []
 
 	print("Preparing data...")
-	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/validation_set.json"), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/training_set.json"), "r") as f:
 		data = json.load(f)
 		for article in data:
 			articles.append(article[0])
@@ -44,10 +51,12 @@ def main(argv):
 	features = hv.transform(articles).toarray()
 
 	print("Dumping tokenized features...")
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename + ".json"), "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/" + filename + ".json"), "w") as f:
 		json.dump(features.tolist(), f)
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json"), "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/labels_training.json"), "w") as f:
 		json.dump(labels, f)
+
+	dump_vectorizer(hv, filename)
 
 
 if __name__ == "__main__":

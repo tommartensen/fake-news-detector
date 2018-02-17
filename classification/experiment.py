@@ -13,16 +13,16 @@ def load_training_data(vectorizer_info):
 	hashed = vectorizer_info["hashed"]
 	tfidf = vectorizer_info["tfidf"]
 	if hashed:
-		filename = "hashed_10000_train_l" + str(number) + "_u" + str(number)
+		filename = "hashed_10000_l" + str(number) + "_u" + str(number)
 	else:
-		filename = "ngram_train_l" + str(number) + "_u" + str(number)
+		filename = "ngram_l" + str(number) + "_u" + str(number)
 		if tfidf:
 			filename += "_t"
 	print("The current vectorizer configuration is: " + filename)
 
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename + ".json"), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/" + filename + ".json"), "r") as f:
 		training_data = json.load(f)
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels_train.json"), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/labels_training.json"), "r") as f:
 		training_labels = json.load(f)
 	print("Training data loading completed...")
 	return training_data, training_labels
@@ -577,4 +577,3 @@ if __name__ == "__main__":
 		print_score(actual_labels=test_labels, predicted_labels=predictions)
 		print("-----------------------------------------------------------")
 		training_data, training_labels, test_labels, test_data = None, None, None, None
-	

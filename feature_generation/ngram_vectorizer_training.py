@@ -1,6 +1,7 @@
 import getopt
 import json
 import os
+import pickle
 
 import sys
 
@@ -16,6 +17,12 @@ def calc_df(upper_bound, size):
 	:return:
 	"""
 	return math.floor((size / upper_bound) * (30 / 13000))
+
+
+def dump_vectorizer(vectorizer, filename):
+	print("Dumping vectorizer...")
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/vectorizers/" + filename + ".vec"), "wb") as f:
+		pickle.dump(vectorizer, f)
 
 
 def main(argv):
@@ -49,7 +56,7 @@ def main(argv):
 	labels = []
 
 	print("Preparing data...")
-	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/validation_set.json"), "r") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../preprocessing/data/training_set.json"), "r") as f:
 		data = json.load(f)
 		for article in data:
 			articles.append(article[0])
@@ -66,10 +73,12 @@ def main(argv):
 		features = transformer.fit_transform(features).toarray()
 
 	print("Dumping tokenized features...")
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/" + filename + ".json"), "w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/" + filename + ".json"), "w") as f:
 		json.dump(features.tolist(), f)
-	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/labels.json"),"w") as f:
+	with open(os.path.join(os.path.dirname(__file__), "../feature_generation/data/trained/labels_training.json"), "w") as f:
 		json.dump(labels, f)
+
+	dump_vectorizer(vectorizer, filename)
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
