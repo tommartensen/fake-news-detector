@@ -102,3 +102,13 @@ ENV/
 
 # Misc
 .idea/
+
+# raw and preprocessed data
+preprocessing/raw_data
+fake_base_complete.json
+test_set.json
+training_set.json
+*/data
+*/raw_data
+*/vectorizers
+!validation_set.json
