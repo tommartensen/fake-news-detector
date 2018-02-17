@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 pip3 install -r setup/requirements.txt
-echo "1. Skipping the generation of the dataset, as it is already given, will place it in the right folders."
-echo "Prepared step 2."
+echo "1. Skipping the generation of the dataset, as it is already given in 'preprocessing/data'."
 echo "Starting feature generation for the validation set."
 mkdir -p feature_generation/data
 python3 feature_generation/hashing_vectorizer.py -l 1 -u 1
@@ -18,7 +17,8 @@ echo "Done feature generation for the validation set."
 echo "Starting hyperparameter optimization."
 python3 hyperparameter_optimization/randomized_search.py
 
-echo "Done with hyperparameter optimization and edit them in 'classifier/experiment.py'."
+echo "Done with hyperparameter optimization. If you want to use these, pause the script and edit them in
+'classifier/experiment.py'."
 echo "Will generate features for training and test set now."
 mkdir -p feature_generation/data/trained
 mkdir -p feature_generation/vectorizers
