@@ -64,7 +64,7 @@ Then, run both `python3 hashing_revectorizer.py` and `python3 ngram_revectorizer
  that are mentioned in [this step](#feature-generation).
  
 ## Classifier Performance
-The classifier performance is evaluated with the f1-score. The optimized parameters that were obtained in [this step](#hyperparameter-optimization) 
+The classifier performance is evaluated with the `f1-score`o. The optimized parameters that were obtained in [this step](#hyperparameter-optimization) 
  must be configured in code. The output is printed directly on the console.
  Run `experiment.py` and have the vectorized training and test set ready in the `data` folders in 
  `feature_generation` and `feature_regeneration` respectively, this should have happened automatically.
